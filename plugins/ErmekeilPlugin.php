@@ -2,7 +2,7 @@
 class ErmekeilPlugin extends phplistPlugin
 {
     public $name = 'Ermekeil Plugin';
-    public $version = '0.2.1';
+    public $version = '0.2.2';
     public $authors = 'Ermekeilinitiative e.V.';
     public $description = 'phpList plugin for site ermekeilkarree.de';
     public $documentationUrl = '';
@@ -44,18 +44,18 @@ class ErmekeilPlugin extends phplistPlugin
      * message but forgot to switch the send format.
      *
      * @param messageid integer: id of the campaign
-     * @param messagedata array: associative array with all data
+     * @param messagedata array: associative array with all data (passed by reference)
      */
-    public function sendMessageTabSave($messageid = 0, $data = array())
+    public function sendMessageTabSave($messageid = 0, &$data = array())
     {
-	if(mb_strlen($data['textmessage']) > mb_strlen($data['message'])) {
-	    // The text content seems to be longer than the regular message.
-	    // In this case, it is better to switch to text format directly.
-	    $data['sendformat'] = 'text';
-	}
+        if(mb_strlen($data['textmessage']) > mb_strlen($data['message'])) {
+            // The text content seems to be longer than the regular message.
+            // In this case, it is better to switch to text format directly.
+            $data['sendformat'] = 'text';
+        }
 
-	// Return a "resultMsg"..it does not seem to be used later on.
-	return '';
+        // Return a "resultMsg"..it does not seem to be used later on.
+        return '';
     }
 }
 ?>
