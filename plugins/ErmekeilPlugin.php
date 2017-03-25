@@ -2,7 +2,7 @@
 class ErmekeilPlugin extends phplistPlugin
 {
     public $name = 'Ermekeil Plugin';
-    public $version = '0.2.0';
+    public $version = '0.2.1';
     public $authors = 'Ermekeilinitiative e.V.';
     public $description = 'phpList plugin for site ermekeilkarree.de';
     public $documentationUrl = '';
