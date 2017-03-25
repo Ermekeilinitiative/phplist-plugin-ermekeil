@@ -48,7 +48,7 @@ class ErmekeilPlugin extends phplistPlugin
      */
     public function sendMessageTabSave($messageid = 0, $data = array())
     {
-	if(mb_strlen($data['textcontent']) > mb_strlen($data['content'])) {
+	if(mb_strlen($data['textmessage']) > mb_strlen($data['message'])) {
 	    // The text content seems to be longer than the regular message.
 	    // In this case, it is better to switch to text format directly.
 	    $data['sendformat'] = 'text';
